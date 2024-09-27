@@ -2,7 +2,14 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-function MovieCard({ movie }) {
+interface Movie {
+  id: number;
+  title: string;
+  poster: string;
+  releaseDate: string;
+}
+
+function MovieCard({ movie }: { movie: Movie }) {
   return (
     <div className="movie-card bg-black shadow-md rounded-lg overflow-hidden">
       <Link href={`/detail/${movie.id}`}>
